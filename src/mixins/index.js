@@ -1,7 +1,7 @@
 var pixi = require('./pixi');
 
 module.exports = {
-  create: function(){
+  addContainerUpdates: function(){
     pixi();
   }
 };

@@ -5,5 +5,4 @@ var core = module.exports = {
   mixins: require('./mixins')
 };
 
-
 global.pixicam = core;

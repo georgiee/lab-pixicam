@@ -3,7 +3,7 @@ var Camera = require('./camera');
 var Rectangle = require('./math/rectangle');
 var Minimap = require('./minimap');
 var CameraConstrain = require('./camera-constrain');
-
+var Mixins = require('./mixins');
 
 var World = augment(PIXI.Container, function(uber){
   
@@ -19,10 +19,10 @@ var World = augment(PIXI.Container, function(uber){
 
     this.worldRectangle = new Rectangle(options.centerX, options.centerY, options.width, options.height)
     this.camera = new Camera(options.screenWidth, options.screenHeight);
+    this.camera.zoomPivotX = this.camera.viewCenterX = options.screenWidth/2;
+    this.camera.zoomPivotY = this.camera.viewCenterY = options.screenHeight/2;
     this.cameraConstrain = new CameraConstrain({ worldBounds: this.worldRectangle });
-
-    //this.createMinimap();
-  };
+  }
 
   this.setSize = function(width, height){
     this.worldRectangle.width = width;
@@ -40,13 +40,15 @@ var World = augment(PIXI.Container, function(uber){
   this.update = function(){
     this.camera.update();
     this.cameraConstrain.update(this.camera);
+      
+    if(!World.__updateMixed) return;
     
     //Kickoff the update call to all children. This update function
     //is a pixi extension of PIXI.Container (mixed in by my pixi extension file).
 
     for (var i = 0, j = this.children.length; i < j; ++i){   
       if(this.children[i]){
-        //this.children[i].update();
+        this.children[i].update();
       }
     }
   };
@@ -79,5 +81,10 @@ var World = augment(PIXI.Container, function(uber){
   };
 
 });
+
+World.mixinUpdates = function(){
+  World.__updateMixed = true;
+  Mixins.addContainerUpdates();
+}
 
 module.exports = World;
