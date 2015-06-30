@@ -9,6 +9,8 @@ var CameraConstrains = augment.defclass({
     this.maxZoom = options.maxZoom || 5;
     this.minZoom = options.minZoom || 0.1;
     this.worldBounds = options.worldBounds;
+
+    this._active = true;
   },
 
   clampZoom: function(zoom){
@@ -50,9 +52,21 @@ var CameraConstrains = augment.defclass({
   },
 
   update: function(camera){
+    if(!this._active) return;
+    
     camera.zoom = this.clampZoom(camera.zoom);
     this.limitToWorld(camera);
   }
 });
+
+
+
+Object.defineProperties(CameraConstrains.prototype, {
+  active: {
+    set: function (value){ this._active = value; },
+    get: function (){ return this._active; }
+  }
+});
+
 
 module.exports = CameraConstrains;

@@ -9,7 +9,7 @@ params = {
 
   world: {
     width: 5000,
-    height: 000
+    height: 1000
   },
   
   camera: {
@@ -56,9 +56,7 @@ var options = {
   screenWidth: params.stage.width,
   screenHeight: params.stage.height,
   width: 5000,
-  height: 500,
-  centerX: -500,
-  centerY: -500
+  height: 500
 }
 
 
@@ -66,27 +64,21 @@ var options = {
 var world = new pixicam.World(options);
 world.setScreenSize(500, 500);
 world.setSize(5000,1000);
-world.setCenter(0,0);
+//world.setCenter(0,0);
 stage.addChild(world);
 
 var camera = world.camera;
 
-var minimap = new pixicam.Minimap(300, 150, camera);
-minimap.setWorldBounds(world.worldRectangle);
-stage.addChild(minimap);
 
 
 var resize = function(stageWidth, stageHeight){
-  minimap.x = stageWidth - minimap.width;
-  minimap.y = stageHeight - minimap.height;
-
   renderer.resize(stageWidth, stageHeight);
 }
 
 var update = function(){
 
   world.update();
-  minimap.update();
+  //minimap.update();
   
   renderer.render(stage);
   requestAnimationFrame(update);

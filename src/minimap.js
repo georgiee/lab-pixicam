@@ -78,7 +78,6 @@ var Minimap = augment(PIXI.Container, function(uber){
     
     this.viewportRect = this.camera.getViewport();
     this.draw();
-
   }
   
   /////////
@@ -158,12 +157,12 @@ var Minimap = augment(PIXI.Container, function(uber){
   this.draw = function(){
     this.drawViewport(this.viewportRect, 0xffff00);
     this.drawWorldBounds(this.worldBoundRect, 0x000000);
+    
     this.drawObjects();
   }
 
   this.drawViewport = function(bounds, color){
     bounds = this.worldRectToMinimap(bounds);
-
     var graphics = this.viewport;
     this.viewport.position.set(bounds.x, bounds.y);
     this.viewport.clear();
@@ -177,14 +176,6 @@ var Minimap = augment(PIXI.Container, function(uber){
     
     this.drawRect(this.worldBounds, 0,0, worldBoundsInMinimap.width, worldBoundsInMinimap.height, {color:color});
     this.drawOrigin(this.worldBounds, -worldBoundsInMinimap.x, -worldBoundsInMinimap.y, worldBoundsInMinimap.width, worldBoundsInMinimap.height);
-  }
-  
-  this.drawDot = function(g, x, y, size, options){
-    var options = options || {};
-    options.center = true;
-    options.color = 0x00ff00;
-
-    this.drawRect(g, x, y, size, size, options);
   }
 
   this.drawRect = function(g, x, y, width, height, options){
