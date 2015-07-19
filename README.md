@@ -20,6 +20,6 @@ world.setSize(5000,1000);
 world.setCenter(0,0);
 
 var camera = world.camera;
-
+//now move and zoom the camera
 
 ```
