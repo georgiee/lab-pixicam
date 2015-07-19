@@ -1,6 +1,8 @@
 # PIXICAM
 A world container which can be viewed through an accompanying camera.
 
+See here:
+<a href='http://georgiee.github.io/pixicam/'>Basic Examples</a>
 Usage:
 
 ```
@@ -23,3 +25,4 @@ var camera = world.camera;
 //now move and zoom the camera
 
 ```
+
