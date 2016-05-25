@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]> <html lang="en" class="no-js ie6 no-mq"> <![endif]-->
+<!--[if IE 7 ]> <html lang="en" class="no-js ie7 no-mq"> <![endif]-->
+<!--[if IE 8 ]> <html lang="en" class="no-js ie8 no-mq"> <![endif]-->
+<!--[if IE 9 ]> <html lang="en" class="no-js ie9"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html lang="en" class="no-js"> <!--<![endif]-->
+<head>
+  <meta charset='utf-8'>
+  <meta content='IE=edge,chrome=1' http-equiv='X-UA-Compatible'>
+  <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
+
+  <title>PIXI Camera System</title>
+  <script src="js/vendor/modernizr-latest.js" type="text/javascript"></script>
+  <style type="text/css">
+    body,html {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+
+  <style>
+      @import url(http://fonts.googleapis.com/css?family=Ubuntu+Mono);
+
+      body, html{
+        height: 100%;
+        font-size: 100%;
+        font-family:'Ubuntu Mono', monospace;
+        padding: 0;
+        margin: 0;
+      }
+      
+      body{
+        padding: 15px;
+      }
+
+      h1,h2,h3{
+        color:#F22987;
+
+        margin: 0;
+        padding: 0;
+        font-size: 1.25rem;
+        margin-bottom: 10px;
+      }
+
+      a{
+        color:#F22987
+      }
+      a:hover{color:#9271D9}
+      
+      body {
+        margin: 0;
+        background: #fff;
+        color: 262621;
+      }
+      
+      dd{
+        margin: 0;
+        padding: 0;
+        color: #786E69;
+        max-width: 50em;
+      }
+
+      dd:not(:last-child){
+        margin-bottom: 1em
+      }
+
+      dd > a{
+        color: inherit;
+      }
+
+      .lab-content{
+        max-width: 400px;
+      }
+
+      @media (max-width:640px){
+        #stage{
+          margin: 0 -15px;
+        }
+      }
+      
+
+    </style>
+</head>
+
+<body>
+  <script src="js/vendor/require.js" data-main="js/bootstrap"></script>
+  
+  <div class='lab-content'>
+    <h1> PIXI JS Camera System </h2>
+
+    <p>
+      Place all your objects in a world which is rendered based on 2d camera transformation. 
+      So you can zoom & translate your world with any size (think of platformer, tilemap).
+    </p>
+
+    <p>
+      This world is a simple container so you can maintain other layers to render a HUD or menu on top of of your camera renderer world.
+    </p>
+
+    Camera use cases:
+    <br>
+    
+    <ul>
+      <li>Zoom to a target</li>
+      <li>Zoom to fit a view area</li>
+      <li>Follow Target</li>
+      <li>Constrained View</li>
+      <li>Change Zoom Pivot</li>
+    </ul>
+  </div>
+  
+  
+  <a href='http://www.kaleadis.de/lab/'>back to lab</a>
+  <br><br>
+
+  <div id='stage'>
+
+  </div>
+  
+    Assets by <a href='http://kenney.nl/'>Kenny</a>
+    <br>
+    Some code snippets taken from <a href='https://github.com/photonstorm/phaser'>Phaser</a>
+    <br>
+    Based on <a href='https://github.com/GoodBoyDigital/pixi.js'>PIXI</a><br>
+    Build with <a href='https://github.com/georgiee/pixicam'>PIXICAM</a><br>
+
+  <br>
+  <br>
+  
+  <a href='http://www.kaleadis.de'>Home</a>
+
+  <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-5010378-5']);
+    _gaq.push(['_trackPageview']);
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+  </script>
+</body>
