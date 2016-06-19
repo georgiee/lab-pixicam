@@ -31,8 +31,8 @@ define(['augment', 'underscore', 'pixi','core/camera','camera/controls/camera-co
       var canvas = this.renderer.view;
       canvas.width = width;
       canvas.height = height;
-      canvas.style.width = width + 'px';
-      canvas.style.height = height + 'px';
+      //canvas.style.width = width + 'px';
+      // /canvas.style.height = height + 'px';
       
       this.renderer.resize(width, height);
     },

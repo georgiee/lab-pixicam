@@ -3,7 +3,8 @@ define(["vendor/dat.gui"], function(gui) {
   var listeners = {}, folder;
 
   gui = new dat.GUI();
-
+  gui.closed = true;
+  
   //dat.GUI.toggleHide();
   
   var params = {
