@@ -49,6 +49,14 @@ var CameraConstrains = augment.defclass({
       var limit = camera.y + (worldBounds.y - viewport.y);
       camera.y =  limit;
     }
+    
+    // Prevent viewport from vibrating rapidly if world bounds are smaller than viewport
+    if (viewport.width > worldBounds.width){
+      camera.x = worldBounds.x + worldBounds.width/2;
+    }
+    if (viewport.height > worldBounds.height){
+      camera.y = worldBounds.y + worldBounds.height/2;
+    }
   },
 
   update: function(camera){
