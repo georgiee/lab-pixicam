@@ -17,7 +17,7 @@ var options = {
   centerY: 0
 }
 
-var world = new pixicam.World(worldSize);
+var world = new pixicam.World(options);
 world.setScreenSize(500, 500);
 world.setSize(5000,1000);
 world.setCenter(0,0);
