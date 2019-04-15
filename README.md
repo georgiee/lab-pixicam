@@ -1,4 +1,15 @@
 # PIXICAM
+➡️ **Important Note**:<br>
+This project was fun to build back in the days (~4 years now 😬). I doubt that anyone (including me) can make this project run with the current pixi version easily or extend it as I used `augment` (there was no es6 yet 👀).
+
+I recommend that you check out the following projects if you need a camera/viewport in pixi.
+
+
++ [Pixi Viewport](https://github.com/davidfig/pixi-viewport) 
++ Phaser 3 has [camera support](http://labs.phaser.io/view.html?src=src\camera\minimap%20camera.js) built-in
+
+---
+
 A world container which can be viewed through an accompanying camera.
 
 See here:  
